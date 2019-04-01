@@ -1,4 +1,3 @@
 Somescreenshots!
 
-[1.png](bild)
-
+![alt text](/path/to/img.jpg "Title")
