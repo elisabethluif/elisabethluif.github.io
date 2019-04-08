@@ -1,4 +1,13 @@
-## Some Screenshots!
+# Some Screenshots!
+
+## *09.04.2019*
+
+![python01](https://user-images.githubusercontent.com/48948770/55756509-063d2780-5a52-11e9-8b48-db0e54f0b2cc.png)
+
+![python02](https://user-images.githubusercontent.com/48948770/55756519-0d643580-5a52-11e9-9da8-23008c3b3bb2.png)
+
+
+## *02.09.2019*
 
 ![git01](https://user-images.githubusercontent.com/48948770/55357939-843b8480-54ce-11e9-975c-f04a46dd3045.png)
 
