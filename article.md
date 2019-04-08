@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Elisabeth Luif" />
+  <title>Der Hungerstreik im Anhaltelager Wöllersdorf im Juli 1935</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Der Hungerstreik im Anhaltelager Wöllersdorf im Juli 1935</h1>
+<p class="subtitle">Politische Repression und Widerstand im Austrofaschismus</p>
+<p class="author">Elisabeth Luif</p>
+<p class="date">August 2018</p>
+</header>
 <h1 id="abstract"><em>Abstract</em></h1>
 <p>Im Juli 1935 fand im Anhaltelager Wöllersdorf der vermutlich größte Hungerstreik der politischen Gefangenen statt. Dieser wurde im Rahmen einer „Antifaschistischen Kampfwoche“ gemeinsam von Revolutionären Sozialisten und KPÖ geplant, in Wöllersdorf selbst aber unter überparteilicher Zusammenarbeit von linken und nationalsozialistischen Inhaftierten durchgeführt. In den umfangreichen schriftlichen Forderungen der Häftlinge wurden die grundsätzliche Aufhebung persönlicher Freiheitsrechte durch das Regime kritisiert, aber auch konkrete Missstände angeprangert. Die Repression hatte weitreichende Konsequenzen, sie traf nicht nur den politischen Menschen, sondern bedrohte die sozioökonomische, soziale und psychische Existenz der Inhaftierten. Vor diesem Hintergrund wird die widersprüchliche Zusammenarbeit der politisch gegnerischen Häftlinge erklärbar. Linke und Nazis befanden sich in Wöllersdorf in einer gemeinsamen Zwangssituation und machten ähnliche Repressionserfahrungen. Teils widersprüchliche politische und persönliche Motive für Widerstand waren miteinander verschränkt.</p>
 <h1 id="einleitung">Einleitung</h1>
@@ -114,3 +139,5 @@
 <li id="fn40" role="doc-endnote"><p>Bericht über die Forderungen der Häftlinge, 3. Einlagebogen. ÖStA/AdR, BKA Inneres, Bestand 20g, Kt. 4492, Zl. 347.733/35.<a href="#fnref40" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
+</body>
+</html>
