@@ -7,7 +7,7 @@
 [Here](https://elisabethluif.github.io/screenshots.html) you can find the latest confirmation screenshots of the codecademy 
 courses!
 
-Take a look at my attempts with georeferencing [here](https://elisabethluif.github.io/georeferencing.html)
+Checkout my attempts with georeferencing [here](https://elisabethluif.github.io/georeferencing.html)
 
 
 ### Older content
