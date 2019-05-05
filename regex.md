@@ -6,8 +6,7 @@
 	“eat”, “eats”, “ate”, “eaten”, “eating”, “eater”,
 	“eatery”
 
-**Solution:**
-`\b(eat(s|en|ing|ery?)?|ate)\b`
+   **Solution:** `\b(eat(s|en|ing|ery?)?|ate)\b`
 
 2. Find all Qadhdhafis...
 	... the name of the country's head of state [is]
@@ -26,8 +25,7 @@
 	Moammar Gadhafi, Mo'ammar Gadhafi, Moammar Ghadafi,
 	Moammar Kadhafi, Moammar Khadaffy, Moammar Khadafy
 
-**Solution:**
-> \b(M[ao][au']a?mm?+[ae]r?) ([AEae][Il][- ])?([GK]h?[zz|ad]+h?af+[iy])\b
+   **Solution:** `\b(M[ao][au']a?mm?+[ae]r?) ([AEae][Il][- ])?([GK]h?[zz|ad]+h?af+[iy])\b`
 
 3. Find all variations of Iṣbahān
 	(construct the shortest possible regular expression):
@@ -40,8 +38,7 @@
 	isfahan, esfāhān‎, esfahān,
 	esfahan, hispahan,
 
-**Solution:**
-> \b([IEHieh]i?[sṣ][bfp][aā]h[aā]n)\b
+   **Solution:** `\b([IEHieh]i?[sṣ][bfp][aā]h[aā]n)\b`
 
 ## PART II (more practice)
 
@@ -68,11 +65,7 @@
 	Werner, Oskar
 	Vader, Darth
 
-**Solution:**
-Search:
- > \t(\w+), (\w+)\n
-Replace:
-> \t$2 $1\n
+   **Solution:** Search: `\t(\w+), (\w+)\n` Replace: `\t$2 $1\n`
 
 2. Simple: Construct regular expressions that finds references all Austrian cities.	
 
@@ -93,8 +86,9 @@ Replace:
 	Gänserndorf, Gerasdorf bei Wien, Ebreichsdorf, Bischofshofen,
 	Groß-Enzersdorf, Seekirchen am Wallersee, Sankt Andrä
 
-**Solution:**
-> \b(Vienna|Graz|Linz|Salzburg|Innsbruck|Klagenfurt|Villach|Wels|Sankt Pölten|Dornbirn|Wiener Neustadt|Steyr|Feldkirch|Bregenz|Leonding|Klosterneuburg|Baden bei Wien|Wolfsberg|Leoben|Krems|Traun|Amstetten|Lustenau|Kapfenberg|Mödling|Hallein|Kufstein|Traiskirchen|Schwechat|Braunau am Inn|Stockerau|Saalfelden|Ansfelden|Tulln|Hohenems|Spittal an der Drau|Telfs|Ternitz|Perchtoldsdorf|Feldkirchen|Bludenz|Bad Ischl|Eisenstadt|Schwaz|Hall in Tirol|Gmunden|Wörgl|Wals-Siezenheim|Marchtrenk|Bruck an der Mur|Sankt Veit an der Glan|Korneuburg|Neunkirchen|Hard|Vöcklabruck|Lienz|Rankweil|Hollabrunn|Enns|Brunn am Gebirge|Ried im Innkreis|Bad Vöslau|Waidhofen|Knittelfeld|Trofaiach|Mistelbach|Zwettl|Völkermarkt|Götzis|Sankt Johann im Pongau|Gänserndorf|Gerasdorf bei Wien|Ebreichsdorf|Bischofshofen|Groß-Enzersdorf|Seekirchen am Wallersee|Sankt Andrä)\b
+   **Solution:**
+   
+   `\b(Vienna|Graz|Linz|Salzburg|Innsbruck|Klagenfurt|Villach|Wels|Sankt Pölten|Dornbirn|Wiener Neustadt|Steyr|Feldkirch|Bregenz|Leonding|Klosterneuburg|Baden bei Wien|Wolfsberg|Leoben|Krems|Traun|Amstetten|Lustenau|Kapfenberg|Mödling|Hallein|Kufstein|Traiskirchen|Schwechat|Braunau am Inn|Stockerau|Saalfelden|Ansfelden|Tulln|Hohenems|Spittal an der Drau|Telfs|Ternitz|Perchtoldsdorf|Feldkirchen|Bludenz|Bad Ischl|Eisenstadt|Schwaz|Hall in Tirol|Gmunden|Wörgl|Wals-Siezenheim|Marchtrenk|Bruck an der Mur|Sankt Veit an der Glan|Korneuburg|Neunkirchen|Hard|Vöcklabruck|Lienz|Rankweil|Hollabrunn|Enns|Brunn am Gebirge|Ried im Innkreis|Bad Vöslau|Waidhofen|Knittelfeld|Trofaiach|Mistelbach|Zwettl|Völkermarkt|Götzis|Sankt Johann im Pongau|Gänserndorf|Gerasdorf bei Wien|Ebreichsdorf|Bischofshofen|Groß-Enzersdorf|Seekirchen am Wallersee|Sankt Andrä)\b`
 
 3. More Difficult: Construct regular expression that finds only cities from 1) Lower Austria; 2) Salzburg.
 
@@ -136,8 +130,6 @@ Replace:
 	Groß-Enzersdorf (Lower Austria),
 	Seekirchen am Wallersee (Salzburg), Sankt Andrä (Carinthia)
 
-**Solution:**
-> \b((?<=\,\s).+(?=\s\(Lower Austria\),)|(?<=\,\s).+(?=\s\(Salzburg\),))\b
+   **Solution:** `\b((?<=\,\s).+(?=\s\(Lower Austria\),)|(?<=\,\s).+(?=\s\(Salzburg\),))\b`
 
-*Note:*
-There's a problem with this solution: it can't find those city names in the beginning of each new line (i.e after the tabulator) - i didn't manage to include this option.
+   *Note:* There's a problem with this solution: this code can't find those city names in the beginning of each new line (i.e after the tabulator)
