@@ -7,7 +7,7 @@
 	“eatery”
 
 **Solution:**
-> \b(eat(s|en|ing|ery?)?|ate)\b
+`\b(eat(s|en|ing|ery?)?|ate)\b`
 
 2. Find all Qadhdhafis...
 	... the name of the country's head of state [is]
