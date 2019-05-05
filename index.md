@@ -4,7 +4,7 @@
 
 ### Update 07.05.2019
 
-Some practice with Regular Expressions [here](https://elisabethluif.github.io/redex.html)
+Some practice with Regular Expressions [here](https://elisabethluif.github.io/regex.html)
 
 [Here](https://elisabethluif.github.io/screenshots.html) you can find the latest confirmation screenshots of the codecademy 
 courses!
