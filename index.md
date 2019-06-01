@@ -1,3 +1,5 @@
+layout: home
+
 # **Welcome Visitors!**
 # _Καλώς ήρθατε!_
 
