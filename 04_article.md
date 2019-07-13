@@ -1,7 +1,8 @@
 # Homework 4: Citation management and academic writing II
 
-*_Download this article as [pdf](https://github.com/elisabethluif/elisabethluif.github.io/files/3056263/Luif_Hungerstreik.pdf)
- or [docx](https://github.com/elisabethluif/elisabethluif.github.io/files/3056262/Luif_Hungerstreik.docx)._*
+*Download this article as [pdf](https://github.com/elisabethluif/elisabethluif.github.io/files/3056263/Luif_Hungerstreik.pdf)
+ or [docx](https://github.com/elisabethluif/elisabethluif.github.io/files/3056262/Luif_Hungerstreik.docx).*
+
 
 
 <body>
