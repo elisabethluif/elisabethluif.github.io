@@ -11,7 +11,7 @@
 
 ### Homework 6: [Regular Expressions](https://elisabethluif.github.io/06_regex)
 
-### Homework 7: [Web Scraping](https://elisabethluif.github.io/07_webscraping)
+### Homework 7: [Webscraping](https://elisabethluif.github.io/07_webscraping)
 
 ### Homework 8: [Text Markup](https://elisabethluif.github.io/08_textmarkup)
 
