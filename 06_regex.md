@@ -133,3 +133,5 @@
    **Solution:** `\b((?<=\,\s).+(?=\s\(Lower Austria\),)|(?<=\,\s).+(?=\s\(Salzburg\),))\b`
 
    *Note:* There's a problem with this solution: this code can't find those city names in the beginning of each new line (i.e after the tabulator)
+
+_Back to [start](https://elisabethluif.github.io/)_
