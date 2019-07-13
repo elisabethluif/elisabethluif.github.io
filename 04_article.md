@@ -1,5 +1,9 @@
 # Homework 4: Citation management and academic writing II
 
+*_Download this article as [pdf](https://github.com/elisabethluif/elisabethluif.github.io/files/3056263/Luif_Hungerstreik.pdf)
+ or [docx](https://github.com/elisabethluif/elisabethluif.github.io/files/3056262/Luif_Hungerstreik.docx)._*
+
+
 <body>
 <header id="title-block-header">
 <h1 class="title">Der Hungerstreik im Anhaltelager Wöllersdorf im Juli 1935</h1>
@@ -125,3 +129,6 @@
 </section>
 </body>
 </html>
+
+
+_Back to [start](https://elisabethluif.github.io/)_
