@@ -6,27 +6,27 @@ I have approached the problem using Python, the <a href="https://pypi.org/projec
 
 First we get all the links from the page:
 
-<code>downloadBaseUrl ='http://www.perseus.tufts.edu/hopper/dltext?'
+downloadBaseUrl ='http://www.perseus.tufts.edu/hopper/dltext?'
 response = requests.get(baseUrl)
 soup = BeautifulSoup(response.text, "html.parser")
 
 #get all links on site and store in list
 results= soup.findAll('a')
-</code>
+
 
 Next we filter the results by date
 
-<code>for result in results:
+for result in results:
     #filter by year
     if "1860" or "1861" or "1862" or "1863" or "1864" or "1865" in str(result):
         #only if it links to a document
         if("doc=" in str(result.get('href'))):
             URLList.append(result.get('href'))
-            rawLinkList.append(result)</code>
+            rawLinkList.append(result)
 
 We get the URLs from the links and store it in a list (URLList).
 
-<code># SAVE FILE
+# SAVE FILE
 
 def downloadFile(URLreceived):
     print("Downloading URL ", URL, "\n" )
@@ -48,7 +48,7 @@ for URL in URLList:
    URL = downloadBaseUrl + URL
     
    fullURLList.append(URL)
-   downloadFile(URL)</code>
+   downloadFile(URL)
  
     
 Lastly, we cut the URLs so we only get the part after the questionmark, and download the file through a custom function.
