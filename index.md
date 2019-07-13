@@ -15,7 +15,7 @@
 
 ### Homework 8: [Text Markup](https://elisabethluif.github.io/08_textmarkup)
 
-### Homework 9: [Structuring Data](https://elisabethluif.github.io/09_structuring)
+### Homework 9: [Structuring Data](https://elisabethluif.github.io/09_structuringdata)
 
 ### Homework 10 + 11: [Text to Map](https://elisabethluif.github.io/10_11_texttomap)
 
