@@ -1,26 +1,27 @@
 # **Welcome Visitors!**
 # _Καλώς ήρθατε!_
 
+## Take a look at various exercises in Digital Humanities:
 
-### Update 07.05.2019
+### [Codeacademy Screenshots](https://elisabethluif.github.io/screenshots.html)
 
-Some practice with Regular Expressions [here](https://elisabethluif.github.io/regex.html)
+### Homework 4: [Citation Managment and Academic Writing II](https://elisabethluif.github.io/04_article)
 
-[Here](https://elisabethluif.github.io/screenshots.html) you can find the latest confirmation screenshots of the codecademy 
-courses!
+### Homework 5:  [Georeferencing](https://elisabethluif.github.io/05_georeferencing)
 
+### Homework 6: [Regular Expressions](https://elisabethluif.github.io/06_regex)
 
-### Update 30.04.2019
+### Homework 7: [Web Scraping](https://elisabethluif.github.io/07_webscraping)
 
-Checkout my attempts with georeferencing [here](https://elisabethluif.github.io/georeferencing.html)
+### Homework 8: [Text Markup](https://elisabethluif.github.io/08_textmarkup)
 
+### Homework 9: [Structuring Data](https://elisabethluif.github.io/09_structuring)
 
-### Older content
+### Homework 10 + 11: [Text to Map](https://elisabethluif.github.io/10_11_texttomap)
 
-Take a look at an interesting article in [html](https://elisabethluif.github.io/article.html), 
-[pdf](https://github.com/elisabethluif/elisabethluif.github.io/files/3056263/Luif_Hungerstreik.pdf)
- or 
-[docx](https://github.com/elisabethluif/elisabethluif.github.io/files/3056262/Luif_Hungerstreik.docx).
+### Homework 12: [Topic Modeling](https://elisabethluif.github.io/12_topicmodeling)
+
+### Homework 13: [Social Network Analysis](https://elisabethluif.github.io/13_socialnetworkanalysis)
 
 
 
