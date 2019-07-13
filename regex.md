@@ -1,4 +1,4 @@
-# Regex practice
+# Homework 6: Regular Expressions
 
 ## PART I
 
