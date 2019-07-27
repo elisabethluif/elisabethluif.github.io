@@ -1,8 +1,8 @@
 # Homework 7: Webscraping
 
-I have approached the problem using Python, the <a href="https://pypi.org/project/wget/">Wget library</a> and the <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup library</a>.
-
 > Download issues of “Richmond Times Dispatch” (Years 1860-1865, only!)
+
+I have approached the problem using Python, the <a href="https://pypi.org/project/wget/">Wget library</a> and the <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup library</a>.
 
 First we get all the links from the page:
 
@@ -21,7 +21,7 @@ print("received all links...")
 
 Next we filter the results by date:
 
-```
+```python
 awLinkList = []
 URLList = []
 
@@ -34,17 +34,18 @@ for result in results:
             rawLinkList.append(result)
 ```
 
-We get the URLs from the links and store it in a list (URLList):
+Get URLs from the links and store it in a list (URLList):
 
-```
+```python
 URLList = list(dict.fromkeys(URLList))
 print("found ", len(rawLinkList) , " raw links")
 print("stored ", len(URLList) , " URLs")
 print("example : ", URLList[0])
 print("substring: ", URLList[0][5:], "\n\n")
+```
 
-
-#Define custom function to download files 
+Define custom function to download files 
+```python
 def downloadFile(URLreceived):
     print("Downloading URL ", URL, "\n" )
     args = 'wget '+ URLreceived+ ' -P '+ saveFolder + ' --quiet -nc';
@@ -57,8 +58,7 @@ fullURLList =[]
 ```
 
 For testing, we make sure we can just download a couple with this variable:
-
-```
+```python
 maxDownloads = 100000;
 for URL in URLList:
     maxDownloads -= 1
@@ -68,7 +68,7 @@ for URL in URLList:
 
 Lastly, we cut the URLs so we only get the part after the questionmark, and download the file through a custom function:
     
-```
+```python
     indexOfQuestionmark = URL.index("?") +1
     URL = URL[indexOfQuestionmark:]
     #print("Cutted URL: ",URL)
