@@ -12,27 +12,27 @@
 
 **8b**
 
-#Define imports and source folders
-import re, os
-from bs4 import BeautifulSoup
+    #Define imports and source folders
+    import re, os
+    from bs4 import BeautifulSoup
 
-source = "./src/"
-target = "./articles/"
+    source = "./src/"
+    target = "./articles/"
 
 
-#if target directory doesn't exist, make one
-try:
-    os.mkdir(target)
-except Exception:
-    pass
+    #if target directory doesn't exist, make one
+    try:
+        os.mkdir(target)
+    except Exception:
+        pass
 
-#for the sake of seeing how many we already have converted
-counter = 0
-print("Importing data from src folder: ", source)
+    #for the sake of seeing how many we already have converted
+    counter = 0
+    print("Importing data from src folder: ", source)
 
-filesInSrc = os.listdir(source)
+    filesInSrc = os.listdir(source)
 
-for fileName in filesInSrc:
+    for fileName in filesInSrc:
 
     fullPath = os.path.abspath("./src/" + fileName)
     
