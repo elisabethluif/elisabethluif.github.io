@@ -6,6 +6,7 @@ I have approached the problem using Python, the <a href="https://pypi.org/projec
 
 First we get all the links from the page:
 
+```python
 baseUrl = 'http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes'
 downloadBaseUrl ='http://www.perseus.tufts.edu/hopper/dltext?'
 saveFolder = 'C:/Users/Sissi/Desktop/Lesson7_Files/'
@@ -16,9 +17,11 @@ print(response)
 soup = BeautifulSoup(response.text, "html.parser")
 results= soup.findAll('a')
 print("received all links...")
+```
 
 Next we filter the results by date
 
+```python
 awLinkList = []
 URLList = []
 
@@ -66,6 +69,7 @@ for URL in URLList:
     fullURLList.append(URL)
     time.sleep(0.5)
     downloadFile(URL)
+    ```
 
 
 
