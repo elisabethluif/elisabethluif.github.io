@@ -7,8 +7,7 @@
 > 4. the text of an entry.
 
 Import libraries and define source/target folders
-  
-```
+```python
   import yaml
   import re, os
   from bs4 import BeautifulSoup
@@ -19,11 +18,10 @@ Import libraries and define source/target folders
   fileCounter = 0
   tempFileCounter=0
   ourCSV = []
-  ```
+```
 
 Go through each file
-  
- ```
+```python
   for fileName in listOfFiles:
       fullPath = os.path.join(source, fileName)
 
@@ -33,8 +31,7 @@ Go through each file
  ```
           
 Try getting date, catch exceptions
-
-```
+```python
           try:
               date = soup.find_all("date", limit = 2)[1]
 
@@ -44,9 +41,8 @@ Try getting date, catch exceptions
           issuedDate = date.get("value")
 ```
           
-  Get all articles and items and iterate over them
-  
-  ```
+Get all articles and items and iterate over them
+```python
           articlesÁndItems = soup.find_all("div3")
 
           #print("Found ", len(articlesÁndItems), " articles/items")
@@ -63,9 +59,8 @@ Try getting date, catch exceptions
               #print("Single entry:", singleEntry)
 ```
 
-catch exception for entrytype
-
-```           
+Catch exception for entrytype
+```python        
              entryType =''
 
               try:
@@ -75,18 +70,15 @@ catch exception for entrytype
                   entryType="None"
 ```
 
-
 Clean text variable
-
-```
+```python
               text = re.sub("<[^<]+>", "", singleEntry.get_text())
               text = re.sub(" +\n|\n +", "\n", text)
               text = re.sub("\n+", " ", text)
 ```              
               
-prepare for TSV
-
-```
+Prepare for TSV
+```python
               var = "\t".join(
                   [issuedDate+'_'+str(counter),
                    issuedDate,
@@ -100,9 +92,9 @@ prepare for TSV
           tempFileCounter+=1
           print("Files handled: " + str(fileCounter))
 ```
-Save out every 100 entries so we don't loose all data
 
-```
+Save out every 100 entries so we don't loose all data
+```python
           if(tempFileCounter >= 100):
               tempFileCounter = 0
           
@@ -112,12 +104,15 @@ Save out every 100 entries so we don't loose all data
 ```
 
 Save out when all files have been handled
-
-```
+```python
   with open("./tsv/dispatch_as_TSV.tsv", "w", encoding="utf8") as f9:
       f9.write("\n".join(ourCSV))
       print("Saved out ", counter, " files into one tsv.")
 ```
+
+Result:
+
+![Screenshot](https://user-images.githubusercontent.com/48948770/61997211-563e0980-b096-11e9-9124-b3f54922992b.png)
 
 
 ****
