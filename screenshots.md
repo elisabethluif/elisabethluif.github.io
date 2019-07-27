@@ -1,6 +1,6 @@
 # CODECADEMY: Some Screenshots!
 
-## Learn the Command Line
+## Learn Git
 
 ![git01](https://user-images.githubusercontent.com/48948770/55357939-843b8480-54ce-11e9-975c-f04a46dd3045.png)
 
@@ -40,22 +40,6 @@
 ## Learn Python 11 + 12
 
 ![python_11_12](https://user-images.githubusercontent.com/48948770/61996553-ae284080-b095-11e9-8bb2-4ee69f37745b.jpg)
-
-
-
-
-## *30.04.2019*
-
-![python03](https://user-images.githubusercontent.com/48948770/56904872-782bee00-6a9f-11e9-8abf-7e09762f3aa4.png)
-
-![python04](https://user-images.githubusercontent.com/48948770/56904879-7b26de80-6a9f-11e9-83d8-baaf4c87a04c.png)
-
-## *09.04.2019*
-
-![python01](https://user-images.githubusercontent.com/48948770/55756509-063d2780-5a52-11e9-8b48-db0e54f0b2cc.png)
-
-![python02](https://user-images.githubusercontent.com/48948770/55756519-0d643580-5a52-11e9-9da8-23008c3b3bb2.png)
-
 
 
 ****
