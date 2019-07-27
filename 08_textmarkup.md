@@ -2,7 +2,7 @@
 
 ## 8a
 
-> write a python script that will create clean copies of text from each issue of the “Dispatch” that you scraped before
+> Write a python script that will create clean copies of text from each issue of the “Dispatch” that you scraped before.
 
 ```
     #Define imports and source folders
@@ -46,7 +46,7 @@
 
 ## 8b
 
-> write a python script that will create clean copies of articles (!) from all issues of the “Dispatch”. (again, make sure to keep the originals intact!)
+> Write a python script that will create clean copies of articles (!) from all issues of the “Dispatch”.
 
 ```
     #Define imports and source folders
