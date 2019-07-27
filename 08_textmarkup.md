@@ -1,5 +1,40 @@
 # Homework 8: Text Markup
+**8a**
 
+    #Define imports and source folders
+    import re, os
+    source = "./src/"
+    target = "./cleaned/"
+
+
+    #Import data from src folder
+
+    filesInSrc = os.listdir(source)
+
+    #Loop through all files from src
+    for fileName in filesInSrc:
+
+        fullPath = os.path.abspath("./src/" + fileName)
+
+        with open(fullPath, encoding="utf8") as file:
+            data = file.read()
+            #Clean data using regex
+            cleanData = re.sub("<[^<]+>","",data)
+            print("Reading from path: ",fullPath)
+
+
+            cleanDataName = os.path.abspath("./cleaned/" + fileName + "_clean.xml")
+            print("Clean data name: ", cleanDataName)
+
+            #Create cleaned folder if it doesn't exist
+            try:
+                os.mkdir(target)
+            except Exception:
+                pass
+            
+            #Save out to cleaned folder
+            with open(cleanDataName, "w", encoding="utf8") as newFile:
+                newFile.write(cleanData)
 
 
 
