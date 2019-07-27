@@ -2,7 +2,7 @@
 
 I have approached the problem using Python, the <a href="https://pypi.org/project/wget/">Wget library</a> and the <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup library</a>.
 
-> download issues of “Richmond Times Dispatch” (Years 1860-1865, only!)
+> Download issues of “Richmond Times Dispatch” (Years 1860-1865, only!)
 
 First we get all the links from the page:
 
@@ -19,9 +19,9 @@ results= soup.findAll('a')
 print("received all links...")
 ```
 
-Next we filter the results by date
+Next we filter the results by date:
 
-```python
+```
 awLinkList = []
 URLList = []
 
@@ -32,8 +32,11 @@ for result in results:
         if("doc=" in str(result.get('href'))):
             URLList.append(result.get('href'))
             rawLinkList.append(result)
+```
 
-#We get the URLs from the links and store it in a list (URLList).
+We get the URLs from the links and store it in a list (URLList):
+
+```
 URLList = list(dict.fromkeys(URLList))
 print("found ", len(rawLinkList) , " raw links")
 print("stored ", len(URLList) , " URLs")
@@ -51,16 +54,21 @@ def downloadFile(URLreceived):
 
 #Save file#extract URLS
 fullURLList =[]
+```
 
-#For testing, make sure we can just download a couple with this variable
+For testing, we make sure we can just download a couple with this variable:
+
+```
 maxDownloads = 100000;
 for URL in URLList:
     maxDownloads -= 1
     if maxDownloads < 0:
         break
+```
 
-#Lastly, we cut the URLs so we only get the part after the questionmark, and download the file through a custom function.
+Lastly, we cut the URLs so we only get the part after the questionmark, and download the file through a custom function:
     
+```
     indexOfQuestionmark = URL.index("?") +1
     URL = URL[indexOfQuestionmark:]
     #print("Cutted URL: ",URL)
@@ -69,8 +77,8 @@ for URL in URLList:
     fullURLList.append(URL)
     time.sleep(0.5)
     downloadFile(URL)
-    ```
+```
 
-
+****
 
 _Back to [start](https://elisabethluif.github.io/)_
