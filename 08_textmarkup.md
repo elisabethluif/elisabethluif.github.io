@@ -1,7 +1,12 @@
 # Homework 8: Text Markup
-**8a**
 
+## 8a
+
+> write a python script that will create clean copies of text from each issue of the “Dispatch” that you scraped before
+
+```
     #Define imports and source folders
+    
     import re, os
     source = "./src/"
     target = "./cleaned/"
@@ -35,18 +40,15 @@
             #Save out to cleaned folder
             with open(cleanDataName, "w", encoding="utf8") as newFile:
                 newFile.write(cleanData)
+```
 
 
 
+## 8b
 
+> write a python script that will create clean copies of articles (!) from all issues of the “Dispatch”. (again, make sure to keep the originals intact!)
 
-
-
-
-
-
-**8b**
-
+```
     #Define imports and source folders
     import re, os
     from bs4 import BeautifulSoup
@@ -104,10 +106,10 @@
                 newFile.write(currentArticle)
                 #print("Writing article ", newFileName, "...")
                 
-
+```
         
 
 
-
+****
 
 _Back to [start](https://elisabethluif.github.io/)_
