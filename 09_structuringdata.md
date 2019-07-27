@@ -8,34 +8,36 @@
   source = "./src/"
   target = "./tsv/"
   listOfFiles = os.listdir(source)
-  
-  #So we can save .tsv every 100 entries
   fileCounter = 0
-  
+  tempFileCounter=0
   ourCSV = []
 
-  #Go through each file
+#Go through each file
   for fileName in listOfFiles:
       fullPath = os.path.join(source, fileName)
-      
+
       with open(fullPath, encoding="utf8") as file:
           data = file.read()
           soup = BeautifulSoup(data, 'lxml')
           
-          # Get date and all articles
-          date = soup.find_all("date", limit = 2)[1]
+          #Try getting date, catch exceptions
+          try:
+              date = soup.find_all("date", limit = 2)[1]
+
+          except Exception:
+              pass
+      
           issuedDate = date.get("value")
+          
+          #Get all articles and items and iterate over them
           articlesÁndItems = soup.find_all("div3")
 
-          print("Found ", len(articlesÁndItems), " articles/items")
+          #print("Found ", len(articlesÁndItems), " articles/items")
           counter = 0
-          
-          #Go through each article/entry
-          
+
           for singleEntry in articlesÁndItems:
               counter+=1
-              
-              #Set head
+              #Extract variables we need for tsv file
               head='None'
 
               if(singleEntry.head is not None):
@@ -44,8 +46,7 @@
               #print("Single entry:", singleEntry)
 
 
-
-              #Set entry type, with Try statement to catch Errors
+              #catch exception for entrytype
               entryType =''
 
               try:
@@ -56,13 +57,13 @@
 
 
 
-              #Clean text variable
+              # Clean text variable
 
               text = re.sub("<[^<]+>", "", singleEntry.get_text())
               text = re.sub(" +\n|\n +", "\n", text)
               text = re.sub("\n+", " ", text)
               
-              #Make TSV Entry
+              #prepare for TSV
               var = "\t".join(
                   [issuedDate+'_'+str(counter),
                    issuedDate,
@@ -71,16 +72,25 @@
                    text]
                   )
               ourCSV.append(var)
-          
+
           fileCounter+=1
+          tempFileCounter+=1
           print("Files handled: " + str(fileCounter))
-  
-          #Save to TSV every 100 files
-          if(fileCounter > 100):
-              fileCounter = 0
+
+
+          #Save out every 100 entries so we don't loose all data
+          if(tempFileCounter >= 100):
+              tempFileCounter = 0
+          
               with open("./tsv/dispatch_as_TSV.tsv", "w", encoding="utf8") as f9:
                   f9.write("\n".join(ourCSV))
                   print("Saved out ", counter, " files into one tsv.")
+                  
+#Save out when all files have been handled
+  with open("./tsv/dispatch_as_TSV.tsv", "w", encoding="utf8") as f9:
+      f9.write("\n".join(ourCSV))
+      print("Saved out ", counter, " files into one tsv.")
+
 
 
 
