@@ -1,15 +1,19 @@
 # Homework 10 + 11: Text to Map
 
+> GISting the “Dispatch” II: Mapping geographical data from the “Dispatch”
+> Extract toponyms (place names) from the “Dispatch” (python)
+> Calculate their frequencies (python)
+> Add coordinates to those places (QGIS/python)
+> Map them in QGIS, using frequencies to size the markers on the map
+
 I tried coding everything without looking at the solution beforehand. The following code is rather bulky, so I don't think it is as efficient as the solution, but I was able to learn a lot from doing it this way.
 Also, I tried to print out frequently to see what the current state of the data is.
 
 I could not figure out how to get the date of the current dataset, as I was accessing the places and was not sure how to get the connected date (is it a parent element?)
 
 
-
-
 Define imports, set folders and set variables
-
+```python
         import yaml
         import re, os
         from bs4 import BeautifulSoup
@@ -26,9 +30,10 @@ Define imports, set folders and set variables
         positionFrequencyDictionary =  {}
         tempFileCounter = 0
         counter = 0
+```
 
 Make seperate functions for saving
-
+```python
         def handleSaving(lengthOfFiles):
             global tempFileCounter
             global counter
@@ -55,12 +60,10 @@ Make seperate functions for saving
             with open("./tsv/positionFrequencyTable.tsv", "w", encoding="utf8") as f9:
                 f9.write("\n".join(ourTSV))
                 print("Saved out total of ", counter, " files into one tsv.")
-
-
-
+```
 
 Go through all files
-
+```python
         for fileName in listOfFiles:
             handleSaving(len(listOfFiles))
 
@@ -69,8 +72,9 @@ Go through all files
             with open(fullPath, encoding="utf8") as file:
                 data = file.read()
                 soup = BeautifulSoup(data, 'lxml')
+```
 Extract places
-
+```python
                 try:
                     places= soup.find_all('placename')
 
@@ -85,9 +89,10 @@ Extract places
                 for place in places:
 
                     latLon = 0
-                    
-Get TGN Data, as Lat/Long
+```
 
+Get TGN Data, as Lat/Long
+```python
                     try:
                         rawKey = place['key']
                         latLon = rawKey.replace('tgn,', '')
@@ -102,9 +107,10 @@ Get TGN Data, as Lat/Long
 
 
                     frequency = 0
+```
 
 CHECK IF PLACE IS ALREADY IN DICTIONARY
-
+```python
                     if placeName in positionFrequencyDictionary:
                         frequency = positionFrequencyDictionary[placeName]
 
@@ -115,21 +121,18 @@ CHECK IF PLACE IS ALREADY IN DICTIONARY
 
                     var = "\t".join([placeName, str(frequency)])
                     ourTSV.append(var)
-
-
-
-
+```
 SORT BY FREQUENCY  
-
+```python
         with open("./tsv/positionFrequencyTable.tsv") as receivedTSV:
                 reader = csv.reader(receivedTSV, delimiter='\t')
-
-make into dict
-
+```
+MAKE INTO DICT
+```python
                 mydict = {rows[0]:rows[1] for rows in reader}
-
+```
 We need to use ordered dict to store order of objects. Also, convert value to int to sort by INT value and not STR value
-
+```python
                 sortedOrderedDict = OrderedDict(sorted(mydict.items(), key=lambda t: int(t[1]), reverse=True))
 
                 start_time = time.time()
@@ -143,7 +146,7 @@ We need to use ordered dict to store order of objects. Also, convert value to in
                         tsv_writer.writerow({fieldnameVar[0]: dictEntry, fieldnameVar[1]: sortedOrderedDict[dictEntry]})
 
                     print("Saved out total of ", counter, " files into one tsv. Took: " ,(time.time() - start_time), " seconds.")
-
+``
 
 
 
@@ -160,9 +163,7 @@ Ordered .tsv file
 
 
 STEP 2 - COMPARING WITH US DATA
-
-
-
+```python
         import re, os
         from bs4 import BeautifulSoup
         import csv
@@ -172,11 +173,10 @@ STEP 2 - COMPARING WITH US DATA
 
         usDictionary ={}
         ourDictionary = {}
-
-
+```
 
 GET OUR DATA AND STORE IN DICTIONARY
-
+```python
         with open("./tsv/positionFrequencyTable_sorted.tsv" , encoding="utf-8") as receivedTSV:
             reader = csv.reader(receivedTSV, delimiter='\t')
 
@@ -197,15 +197,16 @@ GET OUR DATA AND STORE IN DICTIONARY
                 splitLine = line[0].split("*")
 
                 placeName = splitLine[0]
+```
 
 TRY TO GET COORDINATES
-
+```python
                 try:
                     coordinates = int(splitLine[1])
                 except:
-                
+```                
 IF MULTIPLE COORDINATES, TRY SPLITTING THEM AND ADDING TO LIST
-
+```python
                     try:
                         coordinates = splitLine[1].split(";")
 
@@ -218,16 +219,16 @@ IF MULTIPLE COORDINATES, TRY SPLITTING THEM AND ADDING TO LIST
                     except Exception as e:
                         errorCounter +=1
                         continue
-
+```
 STORE FREQUENCY AND COORDINATES IN DATA ARRAY
-
+```python
                 data = []
                 data.append(int(frequency))
                 data.append(coordinates)
-
+```
 
 HANDLE SAME NAME, APPEND TO LIST
-
+```python
                 if(placeName in ourDictionary):
 
                     # MERGE FREQUENCY IF SAME PLACE NAME
@@ -250,10 +251,10 @@ HANDLE SAME NAME, APPEND TO LIST
 
 
             print("Success. Filled our Dictionary, coordinate errors: ", errorCounter)
-
+```
 
 GET US GEO DATA  
-
+```python
         with open("./US.txt" , encoding="utf-8") as receivedTSV:
             reader = csv.reader(receivedTSV, delimiter='\t')
 
@@ -277,16 +278,12 @@ GET US GEO DATA
 
 
 
-
-
-
-
         notFoundCounter = 0
         qgisList = []
         counter = 0
-
+```
 LOOP THROUGH OUR DICTIONARY AND TRY TO FIND OUR PLACES
-
+```python
         print("Looking through our dictionary and comparing with us dictionary")
 
         for ourEntry in ourDictionary:
@@ -337,7 +334,7 @@ DATA - is a list  of [0]Frequency and [1-n] coordinate list
 
         print("Successfully wrote QGIS file..")
 
-
+```
 
 Result:
 
@@ -346,28 +343,12 @@ Full Frequency/Posname/Lat/Long Table
 ![FullsortedposFrequencytable](https://user-images.githubusercontent.com/48948770/62836822-8e814280-bc67-11e9-9b18-c90f60812eec.png)
 
 
+Now we georeference the data with QGIS:
+* Open a new QGIS document and add a googlemaps layer
+* Add text layer and insert "Dispatch" in .csv format, defining longitude and latitude
+* Change layer properties - add "Heatmap" according to frequency / add placename variable to include text of each city
 
-
-
-
-
-> GISting the “Dispatch” II: Mapping geographical data from the “Dispatch”
-
-
-
-> Extract toponyms (place names) from the “Dispatch” (python)
-
-
-
-> Calculate their frequencies (python)
-
-
-
-> Add coordinates to those places (QGIS/python)
-        Hint: you can create two lists 1) one with place names and their frequencies, 2) with place names and their coordinates; after that, you can merge them with python and generate a CSV file (placename, timeParameter, latitude, longitude, frequency) which can be used for creating a map in QGIS
-        
-        
-> Map them in QGIS, using frequencies to size the markers on the map
+![Screenshot](https://user-images.githubusercontent.com/48948770/62837059-161c8080-bc6b-11e9-89f5-6962bdc5dc98.jpg)
 
 
 
