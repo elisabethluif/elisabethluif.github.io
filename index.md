@@ -19,9 +19,7 @@
 
 ### Homework 10 + 11: [Text to Map](https://elisabethluif.github.io/10_11_texttomap)
 
-### Homework 12: [Topic Modeling](https://elisabethluif.github.io/12_topicmodeling)
 
-### Homework 13: [Social Network Analysis](https://elisabethluif.github.io/13_socialnetworkanalysis)
 
 
 
