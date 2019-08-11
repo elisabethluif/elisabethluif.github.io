@@ -1,6 +1,6 @@
 # Homework 10 + 11: Text to Map
 
-I tried coding everything without looking at the solution as much as possible. The following code is rather bulky, so I don't think it is as efficient as the solution, but I was able to learn a lot from doing it this way.
+I tried coding everything without looking at the solution beforehand. The following code is rather bulky, so I don't think it is as efficient as the solution, but I was able to learn a lot from doing it this way.
 Also, I tried adding enough prints to clearly see what the current state of the data is.
 
 Define imports, set folders and set variables
