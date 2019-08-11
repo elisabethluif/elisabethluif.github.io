@@ -139,10 +139,13 @@ We need to use ordered dict to store order of objects. Also, convert value to in
 
 
 
-Results:
+Result:
 
+Unordered .tsv file
+![posFrequencytable](https://user-images.githubusercontent.com/48948770/62836824-8e814280-bc67-11e9-9393-d20674372e66.png)
 
-
+Ordered .tsv file
+![sortedposFrequencytable](https://user-images.githubusercontent.com/48948770/62836823-8e814280-bc67-11e9-881c-337de92bcfce.png)
 
 
 
@@ -328,9 +331,11 @@ DATA - is a list  of [0]Frequency and [1-n] coordinate list
 
 
 
+Result:
 
+Full Frequency/Posname/Lat/Long Table
 
-
+![FullsortedposFrequencytable](https://user-images.githubusercontent.com/48948770/62836822-8e814280-bc67-11e9-9b18-c90f60812eec.png)
 
 
 
