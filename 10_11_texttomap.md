@@ -1,5 +1,153 @@
 # Homework 10 + 11: Text to Map
 
+Define imports, set folders and set variables
+
+        import yaml
+        import re, os
+        from bs4 import BeautifulSoup
+        import csv
+        import operator
+        from collections import OrderedDict 
+        import time
+
+        source = "./src/"
+        target = "./tsv/"
+        listOfFiles = os.listdir(source)
+
+        ourTSV = []
+        positionFrequencyDictionary =  {}
+        tempFileCounter = 0
+        counter = 0
+
+Make seperate functions for saving
+
+        def handleSaving(lengthOfFiles):
+            global tempFileCounter
+            global counter
+            global ourTSV
+
+            tempFileCounter+=1
+            counter+=1
+
+            print("length of files:", lengthOfFiles, " vs counter:", counter)
+
+            if(tempFileCounter >= 20 or counter == lengthOfFiles):
+                tempFileCounter=0
+                saveOutCSV()
+
+        def saveOutCSV():
+            tempFileCounter = 0
+
+            try:
+                print("Trying to make directory: ", target)
+                os.mkdir(target)
+            except Exception:
+                pass
+
+            with open("./tsv/positionFrequencyTable.tsv", "w", encoding="utf8") as f9:
+                f9.write("\n".join(ourTSV))
+                print("Saved out total of ", counter, " files into one tsv.")
+
+
+
+
+Go through all files
+
+        for fileName in listOfFiles:
+            handleSaving(len(listOfFiles))
+
+            fullPath = os.path.join(source, fileName)
+
+            with open(fullPath, encoding="utf8") as file:
+                data = file.read()
+                soup = BeautifulSoup(data, 'lxml')
+Extract places
+
+                try:
+                    places= soup.find_all('placename')
+
+                except Exception as e:
+                    #print("EXCEPTION ",e)
+                    pass
+
+                print("Found all places. Length: ", len(places))
+
+                # TGN = The Getty Thesaurus of Geographical Names
+
+                for place in places:
+
+                    latLon = 0
+                    
+Get TGN Data, as Lat/Long
+
+                    try:
+                        rawKey = place['key']
+                        latLon = rawKey.replace('tgn,', '')
+                    except Exception as e:
+                        #print("EXCEPTION ",e)
+                        pass
+
+
+                    placeName = place.get_text()+ '*'+ str(latLon)
+
+                    #print('Lat/Lon:', latLon, ", Place Name: ", placeName)
+
+
+                    frequency = 0
+
+CHECK IF PLACE IS ALREADY IN DICTIONARY
+
+                    if placeName in positionFrequencyDictionary:
+                        frequency = positionFrequencyDictionary[placeName]
+
+                    frequency += 1
+
+
+                    positionFrequencyDictionary[placeName] = frequency
+
+                    var = "\t".join([placeName, str(frequency)])
+                    ourTSV.append(var)
+
+
+
+
+SORT BY FREQUENCY  
+
+        with open("./tsv/positionFrequencyTable.tsv") as receivedTSV:
+                reader = csv.reader(receivedTSV, delimiter='\t')
+
+make into dict
+                mydict = {rows[0]:rows[1] for rows in reader}
+
+We need to use ordered dict to store order of objects. Also, convert value to int to sort by INT value and not STR value
+
+                sortedOrderedDict = OrderedDict(sorted(mydict.items(), key=lambda t: int(t[1]), reverse=True))
+
+                start_time = time.time()
+
+                with open("./tsv/positionFrequencyTable_sorted.tsv", "w", encoding="utf8", newline='') as output_file:
+                    fieldnameVar = ["Placename", "Frequency"]
+                    tsv_writer = csv.DictWriter(output_file, fieldnames=fieldnameVar, delimiter='\t')
+                    tsv_writer.writeheader()
+
+                    for dictEntry in sortedOrderedDict:
+                        tsv_writer.writerow({fieldnameVar[0]: dictEntry, fieldnameVar[1]: sortedOrderedDict[dictEntry]})
+
+                    print("Saved out total of ", counter, " files into one tsv. Took: " ,(time.time() - start_time), " seconds.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 > GISting the “Dispatch” II: Mapping geographical data from the “Dispatch”
 
 
