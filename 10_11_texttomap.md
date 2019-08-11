@@ -294,10 +294,11 @@ LOOP THROUGH OUR DICTIONARY AND TRY TO FIND OUR PLACES
                 #print("FOUND ", ourEntry , " - " ,ourDictionary[ourEntry]," in US Dictionary!")
                 latitude = usDictionary[ourEntry][4]
                 longitude = usDictionary[ourEntry][5]
+```
 
 ourDictionary[placeName] - is a list of [0] place name and [1] DATA               
 DATA - is a list  of [0]Frequency and [1-n] coordinate list
-
+```python
                 currentEntryValues = ourDictionary[ourEntry]
                 currentPlaceName = ourEntry
 
