@@ -3,6 +3,11 @@
 I tried coding everything without looking at the solution beforehand. The following code is rather bulky, so I don't think it is as efficient as the solution, but I was able to learn a lot from doing it this way.
 Also, I tried adding enough prints to clearly see what the current state of the data is.
 
+I could not figure out how to get the date of the current dataset, as I was accessing the places and was not sure how to get the connected date (is it a parent element?)
+
+
+
+
 Define imports, set folders and set variables
 
         import yaml
