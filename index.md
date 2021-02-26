@@ -5,8 +5,6 @@
 
 ### [Codeacademy Screenshots](https://elisabethluif.github.io/screenshots.html)
 
-### Homework 4: [Citation Managment and Academic Writing II](https://elisabethluif.github.io/04_article)
-
 ### Homework 5:  [Georeferencing](https://elisabethluif.github.io/05_georeferencing)
 
 ### Homework 6: [Regular Expressions](https://elisabethluif.github.io/06_regex)
